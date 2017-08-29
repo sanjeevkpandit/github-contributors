@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #6C7A89;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #2574A9;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1024px;
+}
+
+.title {
+  font-size: 36px;
+  text-align: center;
+  padding: 20px;
+}
+
+.contributor-wrapper {
+  text-align: center;
+  padding: 20px;
+}
+
+.contributor-wrapper .repo-title {
+  font-size: 24px;
+  padding: 30px;
+}
+
+.contributor-wrapper .contributors-count {
+  font-size: 16px;
+  font-weight: 200;
+  padding: 0 20px;
+}
+
+.contributor {
+  width: 250px;
+  padding: 10px;
+  display: inline-block;
+}
+
+.contributor .contributor-link {
+  display: block;
+  padding: 10px;
+  border: 1px solid #6C7A89;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.contributor .contributor-link:hover {
+  background: #2574A9;
+  color: #F1F1F1;
+  border: 1px solid #2574A9;
+  border-radius: 5px;
+}
+
+.contributor .username {
+  font-size: 16px;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.contributor .user-profile-image {
+  width: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+}
