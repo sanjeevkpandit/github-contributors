@@ -57,7 +57,9 @@ class ContributorsList extends Component {
           {this.props.match.params.repository}
           <span className="contributors-count">{this.state.contributors.length} contributors</span>
         </h1>
-        {elements}
+        <div className="contributors-list">
+          {elements}
+        </div>
       </div>
     );
   }
