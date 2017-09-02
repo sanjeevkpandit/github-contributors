@@ -12,8 +12,11 @@ class ContributorsList extends Component {
       repository: '',
       contributors: [],
       error: '',
-      loaded: false
+      loaded: false,
+      activeListingView: 'thumbnail'
     };
+
+    this.handleChangeListingView = this.handleChangeListingView.bind(this);
   }
 
   componentDidMount() {
@@ -38,6 +41,12 @@ class ContributorsList extends Component {
       });
   }
 
+  handleChangeListingView(listingView) {
+    this.setState({
+      activeListingView: listingView
+    });
+  }
+
   render() {
     if (!this.state.loaded) {
       return <div>Loading...</div>;
@@ -47,17 +56,24 @@ class ContributorsList extends Component {
       return <div>Unable to fetch repository information. Please check the username and repository and try again.</div>
     }
 
-    let elements = [];
+    let elements = this.state.contributors.map(contributor => <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />);
 
-    elements = this.state.contributors.map(contributor => <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />);
+    let listingViewElement = <div onClick={() => this.handleChangeListingView('list')} className={`list-view ${this.state.activeListingView === 'list' ? 'active' : ''}`} />;
+    let thumbnailViewElement = <div onClick={() => this.handleChangeListingView('thumbnail')} className={`thumbnail-view ${this.state.activeListingView === 'thumbnail' ? `active` : ''}`} />;
 
     return (
       <div className="contributor-wrapper">
-        <h1 className="repo-title">
-          {this.props.match.params.repository}
+        <h1 className="repo-title clearfix">
+          <a className="repo-name" href={`https://github.com/${this.props.match.params.username}/${this.props.match.params.repository}`} target="_blank">
+            {this.props.match.params.repository}
+          </a>
           <span className="contributors-count">{this.state.contributors.length} contributors</span>
+          <div className="listing-wrapper">
+            {listingViewElement}
+            {thumbnailViewElement}
+          </div>
         </h1>
-        <div className="contributors-list">
+        <div className={`contributors-list clearfix ${this.state.activeListingView}`}>
           {elements}
         </div>
       </div>
