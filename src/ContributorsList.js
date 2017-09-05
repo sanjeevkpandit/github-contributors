@@ -8,8 +8,7 @@ class ContributorsList extends Component {
     super(props);
 
     this.state = {
-      username: '',
-      repository: '',
+      repo: '',
       contributors: [],
       error: '',
       loaded: false,
@@ -20,20 +19,17 @@ class ContributorsList extends Component {
   }
 
   componentDidMount() {
-    let username = this.props.match.params.username,
-        repository = this.props.match.params.repository;
-
     axios
-      .get(`https://api.github.com/repos/${username}/${repository}/contributors`)
+      .get(`https://api.github.com/repos/${this.props.repo}/contributors`)
       .then(response => {
         this.setState({
-          username: username,
-          repository: repository,
+          repo: this.props.repo,
           contributors: response.data,
           loaded: true
         });
       })
-      .catch(error => {
+    .catch(error => {
+      console.log(error);
         this.setState({
           error: error,
           loaded: true
@@ -64,8 +60,8 @@ class ContributorsList extends Component {
     return (
       <div className="contributor-wrapper">
         <h1 className="repo-title clearfix">
-          <a className="repo-name" href={`https://github.com/${this.props.match.params.username}/${this.props.match.params.repository}`} target="_blank">
-            {this.props.match.params.username}/{this.props.match.params.repository}
+          <a className="repo-name" href={`https://github.com/${this.props.repo}`} target="_blank">
+            {this.props.repo}
           </a>
           <span className="contributors-count">{this.state.contributors.length} contributors</span>
           <div className="listing-wrapper">

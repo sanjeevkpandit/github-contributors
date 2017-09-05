@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-import Routes from './Routes';
+import ContributorsList from './ContributorsList';
 
 class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="title">PROJECT CONTRIBUTORS</h1>
+        <h1 className="title">GITHUB CONTRIBUTORS</h1>
 
-        <Routes />
+        <ContributorsList repo="facebook/react" />
       </div>
     );
   }
