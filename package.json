@@ -1,5 +1,6 @@
 {
   "name": "github-contributors",
+  "homepage": "http://sanjeevkpandit.github.io/github-contributors",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
