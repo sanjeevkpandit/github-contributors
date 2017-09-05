@@ -11,7 +11,7 @@ const Routes = props => {
         path="/contributors/:username/:repository"
         component={ ContributorsList } />
 
-      <Redirect to="/contributors" />
+      <Redirect to="/contributors/sanjeevkpandit/github-contributors" />
     </Switch>
   );
 }
