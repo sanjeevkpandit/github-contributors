@@ -65,7 +65,7 @@ class ContributorsList extends Component {
       <div className="contributor-wrapper">
         <h1 className="repo-title clearfix">
           <a className="repo-name" href={`https://github.com/${this.props.match.params.username}/${this.props.match.params.repository}`} target="_blank">
-            {this.props.match.params.repository}
+            {this.props.match.params.username}/{this.props.match.params.repository}
           </a>
           <span className="contributors-count">{this.state.contributors.length} contributors</span>
           <div className="listing-wrapper">

@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="title">List of contributors in your/other's project.</h1>
+        <h1 className="title">PROJECT CONTRIBUTORS</h1>
 
         <Routes />
       </div>
