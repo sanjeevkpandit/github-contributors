@@ -47,16 +47,22 @@ class ContributorsList extends Component {
 
     return (
       <div>
-        <h2 className="text-center">
-          <a href={`https://github.com/${this.props.repo}`} target="_blank">
-            {this.props.repo}
-          </a>
-          <small className="text-muted"> {contributors.length} contributors</small>
-        </h2>
-        <div className="row">
-          {contributors && contributors.map(contributor =>
-            <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
-          )}
+        <div className="jumbotron">
+          <div className="container">
+            <h1>
+              <a href={`https://github.com/${this.props.repo}`} target="_blank">
+                {this.props.repo}
+              </a>
+              <small className="text-muted"> {contributors.length} contributors</small>
+            </h1>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row">
+            {contributors && contributors.map(contributor =>
+              <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
+            )}
+          </div>
         </div>
       </div>
     );
