@@ -35,7 +35,7 @@ class ContributorsList extends Component {
   }
 
   render() {
-    const { view, error, loading, contributors } = this.state;
+    const { error, loading, contributors } = this.state;
 
     if (loading) {
       return <div>Loading...</div>;
@@ -46,20 +46,17 @@ class ContributorsList extends Component {
     }
 
     return (
-      <div className="contributor-wrapper">
-        <h1 className="repo-title clearfix">
-          <a className="repo-name" href={`https://github.com/${this.props.repo}`} target="_blank">
+      <div>
+        <h2 className="text-center">
+          <a href={`https://github.com/${this.props.repo}`} target="_blank">
             {this.props.repo}
           </a>
-          <span className="contributors-count">{contributors.length} contributors</span>
-          <div className="listing-wrapper">
-            <div onClick={() => this.handleChangeListingView('list')} className={`list-view ${view === 'list' ? 'active' : ''}`} />
-            <div onClick={() => this.handleChangeListingView('thumbnail')} className={`thumbnail-view ${view === 'thumbnail' ? `active` : ''}`} />
-          </div>
-        </h1>
-        <div className={`contributors-list clearfix ${view}`}>
-          {contributors
-            && contributors.map(contributor => <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />)}
+          <small className="text-muted"> {contributors.length} contributors</small>
+        </h2>
+        <div className="row">
+          {contributors && contributors.map(contributor =>
+            <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
+          )}
         </div>
       </div>
     );

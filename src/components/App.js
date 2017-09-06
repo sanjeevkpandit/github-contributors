@@ -4,7 +4,7 @@ import ContributorsList from './ContributorsList';
 
 const App = () => (
   <div className="container">
-    <h1 className="title">GitHub Contributors</h1>
+    <h1 className="text-center">GitHub Contributors</h1>
 
     <ContributorsList repo="facebook/react" />
   </div>
