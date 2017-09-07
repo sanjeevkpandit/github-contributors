@@ -5,6 +5,7 @@ import Contributor from './Contributor';
 
 class ContributorsList extends Component {
   state = {
+    user: '',
     repo: '',
     contributors: [],
     error: '',
@@ -14,13 +15,15 @@ class ContributorsList extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://api.github.com/repos/${this.props.repo}/contributors`)
+      .get(`https://api.github.com/repos/${this.props.userRepo.user}/${this.props.userRepo.repo}/contributors`)
       .then(response => {
         this.setState({
           repo: this.props.repo,
           contributors: response.data,
           loading: false
         });
+
+        document.title = this.props.userRepo.user + '/' + this.props.userRepo.repo + ' | Github Contributors';
       })
     .catch(error => {
         this.setState({
@@ -38,11 +41,19 @@ class ContributorsList extends Component {
     const { error, loading, contributors } = this.state;
 
     if (loading) {
-      return <div>Loading...</div>;
+      return (
+        <div className="container">
+          Loading...
+        </div>
+      );
     }
 
     if (error) {
-      return <div>Unable to fetch repository information. Please check the username and repository and try again.</div>
+      return (
+        <div className="container">
+          Unable to fetch repository information. Please check the username and repository and try again.
+        </div>
+      );
     }
 
     return (
@@ -50,10 +61,16 @@ class ContributorsList extends Component {
         <div className="jumbotron">
           <div className="container">
             <h1>
-              <a href={`https://github.com/${this.props.repo}`} target="_blank">
-                {this.props.repo}
+              <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank">
+                {this.props.userRepo.user}
               </a>
-              <small className="text-muted"> {contributors.length} contributors</small>
+              <small className="text-muted"> / </small>
+              <a href={`https://github.com/${this.props.userRepo.repo}`} target="_blank">
+                {this.props.userRepo.repo}
+              </a>
+              <small className="text-muted">
+                {` ${contributors.length} ${contributors.length === 1 ? 'contributor' : 'contributors'}`}
+              </small>
             </h1>
           </div>
         </div>

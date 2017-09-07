@@ -10,7 +10,7 @@ const Footer = () => (
       <p>
         &copy; 2017
         <span className="float-right">
-          <a href="https://github.com/sanjeevkpandit/github-contributors" target="_blank">
+          <a href="https://github.com/sanjeevkpandit/github-contributors" target="_blank" rel="noopener noreferrer">
             <img src={gitHubLogo} width="30" alt="GitHub Contributors"/>
           </a>
         </span>
