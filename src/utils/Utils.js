@@ -28,12 +28,11 @@ const getRepoUrl = () => {
     repo = 'github-contributors';
   }
 
-  return {
-    user,
-    repo
-  };
+  return {user, repo};
 };
 
-export {
-  getRepoUrl
+const setLocationParam = (key, value) => {
+  window.location.search = '?' + key + '=' + value;
 };
+
+export {getRepoUrl, setLocationParam, getParameterByName};

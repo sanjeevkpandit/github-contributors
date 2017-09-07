@@ -1,6 +1,6 @@
 import axios from 'axios';
-import Loader from 'halogen/BounceLoader';
 import React, { Component } from 'react';
+import Loader from 'halogen/BounceLoader';
 
 import Contributor from './Contributor';
 
@@ -68,7 +68,7 @@ class ContributorsList extends Component {
                 {this.props.userRepo.user}
               </a>
               <small className="text-muted"> / </small>
-              <a href={`https://github.com/${this.props.userRepo.repo}`} target="_blank">
+              <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank">
                 {this.props.userRepo.repo}
               </a>
               <small className="text-muted">

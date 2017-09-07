@@ -7,7 +7,9 @@ a:hover {
   border-radius: 50%;
 }
 
+
 /* Spinner */
+
 .loading-container {
   padding: 100px 0;
   width: 48px;
@@ -24,15 +26,18 @@ a:hover {
   vertical-align: top;
 }
 
+
 /*
   Set the color of the icon
 */
-svg path,
-svg rect {
+
+svg path, svg rect {
   fill: #FF6700;
 }
 
+
 /* Footer */
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -41,7 +46,9 @@ svg rect {
   background-color: #F7F7F7;
 }
 
+
 /* Override bootstrap settings */
+
 html {
   height: 100%;
 }
@@ -51,7 +58,14 @@ body {
   min-height: 100%;
   padding-bottom: 6rem;
 }
+
 .card {
   margin: 5px 0;
   border: none;
+}
+
+@media (min-width: 576px) {
+  .jumbotron {
+    padding: 2rem 2rem;
+  }
 }
