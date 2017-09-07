@@ -34,12 +34,23 @@ svg rect {
 
 /* Footer */
 .footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
+  padding: 0.5rem;
+  background-color: #F7F7F7;
 }
 
 /* Override bootstrap settings */
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6rem;
+}
 .card {
   margin: 5px 0;
   border: none;
