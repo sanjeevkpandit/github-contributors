@@ -7,6 +7,38 @@ a:hover {
   border-radius: 50%;
 }
 
+/* Spinner */
+.loading-container {
+  padding: 100px 0;
+  width: 48px;
+}
+
+.loader {
+  margin: 0 0 2em;
+  height: 100px;
+  width: 20%;
+  text-align: center;
+  padding: 1em;
+  margin: 0 auto 1em;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*
+  Set the color of the icon
+*/
+svg path,
+svg rect {
+  fill: #FF6700;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 /* Override bootstrap settings */
 .card {
   margin: 5px 0;

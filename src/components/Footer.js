@@ -3,7 +3,7 @@ import React from 'react';
 import gitHubLogo from '../assets/images/GitHub-Mark.png';
 
 const Footer = () => (
-  <footer>
+  <footer className="footer">
     <hr/>
 
     <div className="container">

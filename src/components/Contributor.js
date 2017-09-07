@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contributor = ({contributor}) => {
   return (
-    <div className="col-sm-2">
+    <div className="col-sm-2 text-center">
       <div className="card">
         <a href={contributor.html_url} target="_blank">
           <img className="card-img-top contributor-image" src={contributor.avatar_url} alt={contributor.login}/>

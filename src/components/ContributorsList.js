@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Loader from 'halogen/BounceLoader';
 import React, { Component } from 'react';
 
 import Contributor from './Contributor';
@@ -42,8 +43,8 @@ class ContributorsList extends Component {
 
     if (loading) {
       return (
-        <div className="container">
-          Loading...
+        <div className="container text-center loading-container">
+          <Loader color="#26A65B" size="48px" margin="4px" />
         </div>
       );
     }
@@ -51,7 +52,9 @@ class ContributorsList extends Component {
     if (error) {
       return (
         <div className="container">
-          Unable to fetch repository information. Please check the username and repository and try again.
+          <div className="alert alert-danger" role="alert">
+            Unable to fetch repository information. Please check the username and repository and try again.
+          </div>
         </div>
       );
     }
@@ -75,7 +78,7 @@ class ContributorsList extends Component {
           </div>
         </div>
         <div className="container">
-          <div className="row">
+          <div className="row text-center">
             {contributors && contributors.map(contributor =>
               <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
             )}
