@@ -4,7 +4,7 @@ import {setLocationParam} from '../utils/Utils';
 
 class SearchInput extends Component {
   state = {
-    key: ''
+    key: this.props.searchKey || ''
   };
 
   handleSubmit = (e) => {
@@ -28,8 +28,13 @@ class SearchInput extends Component {
   render() {
     return (
       <form className="form-inline my-2 my-lg-0" onSubmit={this.handleSubmit}>
-        <input id="search-input" className="form-control mr-sm-2" type="text" placeholder="Search github repos" onChange={this.handleInputChange}/>
-        <button className="btn btn-outline-success my-2 my-sm-0" value={this.state.key} type="submit">
+        <input id="search-input"
+          className="form-control mr-sm-2"
+          type="text"
+          value={this.state.key}
+          placeholder="Search github repos"
+          onChange={this.handleInputChange}/>
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">
           Search
         </button>
       </form>

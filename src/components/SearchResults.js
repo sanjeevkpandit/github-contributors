@@ -10,13 +10,34 @@ class SearchResults extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.github.com/search/repositories?q=${this.props.searchKey}+in:name`).then(response => {
-      this.setState({results: response.data, loading: false});
+    this.fetchSearchResults(this.props.searchKey);
+  }
 
-      document.title = 'Search results for ' + this.props.searchKey + ' | Github Contributors';
-    }).catch(error => {
-      this.setState({error: true, loading: false});
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.searchKey && (this.props.searchKey !== nextProps.searchKey)) {
+      this.fetchSearchResults(nextProps.searchKey);
+    }
+  }
+
+  fetchSearchResults = (keyword) => {
+    if (!keyword.length) {
+      return;
+    }
+
+    this.setState({
+      loading: true
     });
+
+    axios
+      .get(`https://api.github.com/search/repositories?q=${keyword}+in:name`)
+      .then(response => {
+        this.setState({results: response.data, loading: false});
+
+        document.title = 'Search results for ' + keyword + ' | Github Contributors';
+      })
+      .catch(error => {
+        this.setState({error: true, loading: false});
+      });
   }
 
   render() {
@@ -58,9 +79,13 @@ class SearchResults extends Component {
           </div>
           <div>
             <div className="list-group">
-              {results.items && results.items.map(result => <a href={`?user=${result.owner.login}&repo=${result.name}`} className="list-group-item" key={`contributor-${result.id}`}>
-                {result.full_name}
-              </a>)}
+              {results.items && results.items.map(result => (
+                <a href={`?user=${result.owner.login}&repo=${result.name}`}
+                  className="list-group-item"
+                  key={`contributor-${result.id}`}>
+                  {result.full_name}
+                </a>
+              ))}
             </div>
           </div>
         </div>

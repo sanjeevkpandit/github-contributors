@@ -32,7 +32,13 @@ const getRepoUrl = () => {
 };
 
 const setLocationParam = (key, value) => {
-  window.location.search = '?' + key + '=' + value;
+  if (window.history.pushState) {
+    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + key + '=' + value;
+
+    window.history.pushState({
+      path: newurl
+    }, '', newurl);
+  }
 };
 
 export {getRepoUrl, setLocationParam, getParameterByName};

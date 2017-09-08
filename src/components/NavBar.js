@@ -2,7 +2,7 @@ import React from 'react';
 
 import SearchInput from './SearchInput';
 
-const NavBar = ({handleToggleSearchResults}) => (
+const NavBar = ({handleToggleSearchResults, searchKey}) => (
   <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
     <button className="navbar-toggler navbar-toggler-right"
       type="button" data-toggle="collapse"
@@ -17,7 +17,7 @@ const NavBar = ({handleToggleSearchResults}) => (
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
       </ul>
-      <SearchInput handleToggleSearchResults={handleToggleSearchResults} />
+      <SearchInput handleToggleSearchResults={handleToggleSearchResults} searchKey={searchKey} />
     </div>
   </nav>
 );

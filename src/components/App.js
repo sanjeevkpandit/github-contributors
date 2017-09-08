@@ -25,7 +25,7 @@ class App extends Component {
 
     return (
       <div>
-        <NavBar handleToggleSearchResults={this.handleToggleSearchResults} />
+        <NavBar handleToggleSearchResults={this.handleToggleSearchResults} searchKey={Utils.getParameterByName('search')} />
         { mainEl }
         <Footer />
       </div>
