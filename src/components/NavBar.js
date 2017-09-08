@@ -1,7 +1,5 @@
 import React from 'react';
 
-import SearchInput from './SearchInput';
-
 import gitHubLogo from '../assets/images/GitHub-Mark.png';
 
 const NavBar = ({handleToggleSearchResults, searchKey}) => (

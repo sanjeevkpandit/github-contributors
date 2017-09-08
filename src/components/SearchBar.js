@@ -43,6 +43,12 @@ class SearchBar extends Component {
               Search
             </button>
           </div>
+
+          <div className="col-sm-10">
+            <p id="passwordHelpBlock" className="form-text text-muted">
+              Type react, atom, facebook/react etc.
+            </p>
+          </div>
         </form>
       </div>
     );
