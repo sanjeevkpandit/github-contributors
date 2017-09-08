@@ -74,7 +74,7 @@ class SearchResults extends Component {
     return (
       <div>
         <div className="container">
-          <div className="alert alert-success" role="alert">
+          <div className="alert alert-info" role="alert">
             Search results for '{this.props.searchKey}':
           </div>
           <div>
