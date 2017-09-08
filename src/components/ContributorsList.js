@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { Component } from 'react';
+import Loader from 'halogen/BounceLoader';
 
 import Contributor from './Contributor';
 
 class ContributorsList extends Component {
   state = {
+    user: '',
     repo: '',
     contributors: [],
     error: '',
@@ -14,15 +16,17 @@ class ContributorsList extends Component {
 
   componentDidMount() {
     axios
-      .get(`https://api.github.com/repos/${this.props.repo}/contributors`)
+      .get(`https://api.github.com/repos/${this.props.userRepo.user}/${this.props.userRepo.repo}/contributors`)
       .then(response => {
         this.setState({
           repo: this.props.repo,
           contributors: response.data,
           loading: false
         });
+
+        document.title = this.props.userRepo.user + '/' + this.props.userRepo.repo + ' | Github Contributors';
       })
-    .catch(error => {
+      .catch(error => {
         this.setState({
           error,
           loading: false
@@ -35,31 +39,50 @@ class ContributorsList extends Component {
   }
 
   render() {
-    const { view, error, loading, contributors } = this.state;
+    const { error, loading, contributors } = this.state;
 
     if (loading) {
-      return <div>Loading...</div>;
+      return (
+        <div className="container text-center loading-container">
+          <Loader color="#26A65B" size="48px" margin="4px" />
+        </div>
+      );
     }
 
     if (error) {
-      return <div>Unable to fetch repository information. Please check the username and repository and try again.</div>
+      return (
+        <div className="container">
+          <div className="alert alert-danger" role="alert">
+            Unable to fetch repository information. Please check the username and repository and try again.
+          </div>
+        </div>
+      );
     }
 
     return (
-      <div className="contributor-wrapper">
-        <h1 className="repo-title clearfix">
-          <a className="repo-name" href={`https://github.com/${this.props.repo}`} target="_blank">
-            {this.props.repo}
-          </a>
-          <span className="contributors-count">{contributors.length} contributors</span>
-          <div className="listing-wrapper">
-            <div onClick={() => this.handleChangeListingView('list')} className={`list-view ${view === 'list' ? 'active' : ''}`} />
-            <div onClick={() => this.handleChangeListingView('thumbnail')} className={`thumbnail-view ${view === 'thumbnail' ? `active` : ''}`} />
+      <div>
+        <div className="jumbotron">
+          <div className="container">
+            <h1>
+              <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank">
+                {this.props.userRepo.user}
+              </a>
+              <small className="text-muted"> / </small>
+              <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank">
+                {this.props.userRepo.repo}
+              </a>
+              <small className="text-muted">
+                {` ${contributors.length} ${contributors.length === 1 ? 'contributor' : 'contributors'}`}
+              </small>
+            </h1>
           </div>
-        </h1>
-        <div className={`contributors-list clearfix ${view}`}>
-          {contributors
-            && contributors.map(contributor => <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />)}
+        </div>
+        <div className="container">
+          <div className="row text-center">
+            {contributors && contributors.map(contributor =>
+              <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
+            )}
+          </div>
         </div>
       </div>
     );
