@@ -10,7 +10,7 @@ const Contributor = ({contributor}) => {
         <div className="card-block text-center">
           <a className="username" href={contributor.html_url} target="_blank">{contributor.login}</a>
           <p className="card-text">
-            <small>{contributor.contributions} commits</small>
+            <small>{`${contributor.contributions} ${contributor.contributions > 1 ? 'commits' : 'commit'}`}</small>
           </p>
         </div>
       </div>
