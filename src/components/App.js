@@ -4,6 +4,7 @@ import * as Utils from '../utils/Utils';
 
 import Footer from './Footer';
 import NavBar from './NavBar';
+import SearchBar from './SearchBar';
 import SearchResults from './SearchResults';
 import ContributorsList from './ContributorsList';
 
@@ -25,8 +26,15 @@ class App extends Component {
 
     return (
       <div>
-        <NavBar handleToggleSearchResults={this.handleToggleSearchResults} searchKey={Utils.getParameterByName('search')} />
-        { mainEl }
+        <NavBar />
+        <div className="container">
+          <SearchBar handleToggleSearchResults={this.handleToggleSearchResults}
+            searchKey={Utils.getParameterByName('search')} />
+
+          <hr/>
+
+          { mainEl }
+        </div>
         <Footer />
       </div>
     );

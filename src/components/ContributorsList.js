@@ -61,28 +61,23 @@ class ContributorsList extends Component {
 
     return (
       <div>
-        <div className="jumbotron">
-          <div className="container">
-            <h1>
-              <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank">
-                {this.props.userRepo.user}
-              </a>
-              <small className="text-muted"> / </small>
-              <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank">
-                {this.props.userRepo.repo}
-              </a>
-              <small className="text-muted">
-                {` ${contributors.length} ${contributors.length === 1 ? 'contributor' : 'contributors'}`}
-              </small>
-            </h1>
-          </div>
-        </div>
-        <div className="container">
-          <div className="row text-center">
-            {contributors && contributors.map(contributor =>
-              <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
-            )}
-          </div>
+        <h5>
+          <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank">
+            {this.props.userRepo.user}
+          </a>
+          <small className="text-muted"> / </small>
+          <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank">
+            {this.props.userRepo.repo}
+          </a>
+          <small className="text-muted">
+            {` ${contributors.length} ${contributors.length === 1 ? 'contributor' : 'contributors'}`}
+          </small>
+        </h5>
+        <hr/>
+        <div className="row text-center">
+          {contributors && contributors.map(contributor =>
+            <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
+          )}
         </div>
       </div>
     );

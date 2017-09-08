@@ -1,12 +1,16 @@
-a:hover {
+a:hover, button:hover {
   cursor: pointer;
+  text-decoration: none;
+}
+
+.contributor {
+  margin: 10px 0;
 }
 
 .contributor-image {
   width: 100%;
-  border-radius: 50%;
+  border-radius: 10px;
 }
-
 
 /* Spinner */
 
@@ -26,6 +30,14 @@ a:hover {
   vertical-align: top;
 }
 
+.logo {
+  line-height: 3.5rem;
+}
+
+.logo img {
+  width: 72px;
+  padding: 0 0.5rem;
+}
 
 /*
   Set the color of the icon
@@ -57,6 +69,10 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 6rem;
+}
+
+.row {
+  padding: 1em 0;
 }
 
 .card {
