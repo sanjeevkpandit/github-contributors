@@ -26,7 +26,7 @@ class ContributorsList extends Component {
 
         document.title = this.props.userRepo.user + '/' + this.props.userRepo.repo + ' | Github Contributors';
       })
-    .catch(error => {
+      .catch(error => {
         this.setState({
           error,
           loading: false

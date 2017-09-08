@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 import * as Utils from '../utils/Utils';
 
-import NavBar from './NavBar';
 import Footer from './Footer';
+import NavBar from './NavBar';
 import SearchResults from './SearchResults';
 import ContributorsList from './ContributorsList';
 
