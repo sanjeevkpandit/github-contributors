@@ -80,11 +80,13 @@ class SearchResults extends Component {
           <div>
             <div className="list-group">
               {results.items && results.items.map(result => (
-                <a href={`?user=${result.owner.login}&repo=${result.name}`}
-                  className="list-group-item"
-                  key={`contributor-${result.id}`}>
-                  {result.full_name}
-                </a>
+                <li className="list-group-item justify-content-between">
+                  <a href={`?user=${result.owner.login}&repo=${result.name}`}
+                    key={`contributor-${result.id}`}>
+                    {result.full_name}
+                  </a>
+                  <span className="badge badge-default badge-pill">{result.stargazers_count}</span>
+                </li>
               ))}
             </div>
           </div>
