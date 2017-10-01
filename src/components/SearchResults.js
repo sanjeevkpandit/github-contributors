@@ -1,6 +1,9 @@
 import axios from 'axios';
+import Octoicon from 'react-octicon';
 import React, {Component} from 'react';
 import Loader from 'halogen/BounceLoader';
+
+import * as CONSTANTS from '../utils/Constants';
 
 class SearchResults extends Component {
   state = {
@@ -80,12 +83,23 @@ class SearchResults extends Component {
           <div>
             <div className="list-group">
               {results.items && results.items.map(result => (
-                <li className="list-group-item justify-content-between">
-                  <a href={`?user=${result.owner.login}&repo=${result.name}`}
-                    key={`contributor-${result.id}`}>
+                <li className="list-group-item justify-content-between"
+                  key={`contributor-${result.id}`}>
+                  <a href={`?user=${result.owner.login}&repo=${result.name}`}>
                     {result.full_name}
                   </a>
-                  <span className="badge badge-default badge-pill">{result.stargazers_count}</span>
+                  <span className="pull-right">
+                    <a className="badge badge-default badge-pill"
+                      href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_STARGAZERS_URL}`}
+                      target="_blank">
+                      <Octoicon name="star"/> {result.stargazers_count}
+                    </a>
+                    <a className="badge badge-default badge-pill"
+                    href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_NETWORK_URL}`}
+                      target="_blank">
+                      <Octoicon name="repo-forked"/> {result.forks_count}
+                    </a>
+                  </span>
                 </li>
               ))}
             </div>
