@@ -4374,6 +4374,10 @@ obuf@^1.0.0, obuf@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.1.tgz#104124b6c602c6796881a042541d36db43a5264e"
 
+octicons@^3.1.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/octicons/-/octicons-3.5.0.tgz#f7ff5935674d8b114f6d80c454bfaa01797a4e30"
+
 on-finished@~2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -5136,6 +5140,12 @@ react-error-overlay@^1.0.10:
     react-dev-utils "^3.1.0"
     settle-promise "1.0.0"
     source-map "0.5.6"
+
+react-octicon@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-octicon/-/react-octicon-2.0.0.tgz#5d56ea962d7bf4d5042a3708345f55abdbb71ff2"
+  dependencies:
+    octicons "^3.1.0"
 
 react-scripts@1.0.11:
   version "1.0.11"
