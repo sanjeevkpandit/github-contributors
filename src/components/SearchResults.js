@@ -76,34 +76,30 @@ class SearchResults extends Component {
 
     return (
       <div>
-        <div className="container">
-          <div className="alert alert-info" role="alert">
-            Search results for '{this.props.searchKey}':
-          </div>
-          <div>
-            <div className="list-group">
-              {results.items && results.items.map(result => (
-                <li className="list-group-item justify-content-between"
-                  key={`contributor-${result.id}`}>
-                  <a href={`?user=${result.owner.login}&repo=${result.name}`}>
-                    {result.full_name}
-                  </a>
-                  <span className="pull-right">
-                    <a className="badge badge-default badge-pill"
-                      href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_STARGAZERS_URL}`}
-                      target="_blank">
-                      <Octoicon name="star"/> {result.stargazers_count}
-                    </a>
-                    <a className="badge badge-default badge-pill"
-                    href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_NETWORK_URL}`}
-                      target="_blank">
-                      <Octoicon name="repo-forked"/> {result.forks_count}
-                    </a>
-                  </span>
-                </li>
-              ))}
-            </div>
-          </div>
+        <div className="alert alert-info" role="alert">
+          Search results for '{this.props.searchKey}':
+        </div>
+        <div className="list-group">
+          {results.items && results.items.map(result => (
+            <li className="list-group-item justify-content-between"
+              key={`contributor-${result.id}`}>
+              <a href={`?user=${result.owner.login}&repo=${result.name}`}>
+                {result.full_name}
+              </a>
+              <span className="pull-right">
+                <a className="badge badge-default badge-pill"
+                  href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_STARGAZERS_URL}`}
+                  target="_blank">
+                  <Octoicon name="star"/> {result.stargazers_count}
+                </a>
+                <a className="badge badge-default badge-pill"
+                href={`${result.html_url}/${CONSTANTS.GITHUB.GITHUB_NETWORK_URL}`}
+                  target="_blank">
+                  <Octoicon name="repo-forked"/> {result.forks_count}
+                </a>
+              </span>
+            </li>
+          ))}
         </div>
       </div>
     );
