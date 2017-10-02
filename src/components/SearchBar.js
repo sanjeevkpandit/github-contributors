@@ -27,27 +27,24 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div className="row">
-        <form className="form-inline w-100" onSubmit={this.handleSubmit}>
-          <div className="form-group col-sm-10">
-            <input type="text"
-              className="form-control form-control-lg w-100"
-              value={this.state.key}
-              placeholder="Search github repos"
-              onChange={this.handleInputChange}/>
-          </div>
-
-          <div className="form-group col-sm-2">
-            <button type="submit"
-              className="btn btn-lg btn-outline-primary w-100">
-              Search
-            </button>
-          </div>
-
-          <div className="col-sm-10">
-            <p id="passwordHelpBlock" className="form-text text-muted">
-              Type react, atom, facebook/react etc.
-            </p>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              <div className="input-group">
+                <input type="text"
+                  value={this.state.key}
+                  className="form-control form-control-lg"
+                  placeholder="Search github repos"
+                  onChange={this.handleInputChange} />
+                <span className="input-group-btn">
+                  <button className="btn btn-primary" type="button">Search</button>
+                </span>
+              </div>
+              <p id="passwordHelpBlock" className="form-text text-muted">
+                Type react, atom, facebook/react etc.
+              </p>
+            </div>
           </div>
         </form>
       </div>
