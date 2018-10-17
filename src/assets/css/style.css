@@ -1,3 +1,4 @@
+/*
 a:hover, button:hover {
   cursor: pointer;
   text-decoration: none;
@@ -12,7 +13,7 @@ a:hover, button:hover {
   border-radius: 10px;
 }
 
-/* Spinner */
+!* Spinner *!
 
 .loading-container {
   padding: 100px 0;
@@ -39,16 +40,15 @@ a:hover, button:hover {
   padding: 0 0.5rem;
 }
 
-/*
+!*
   Set the color of the icon
-*/
+*!
 
 svg path, svg rect {
   fill: #FF6700;
 }
 
-
-/* Footer */
+!* Footer *!
 
 .footer {
   position: absolute;
@@ -58,8 +58,7 @@ svg path, svg rect {
   background-color: #F7F7F7;
 }
 
-
-/* Override bootstrap settings */
+!* Override bootstrap settings *!
 
 html {
   height: 100%;
@@ -85,3 +84,4 @@ body {
     padding: 2rem 2rem;
   }
 }
+*/
