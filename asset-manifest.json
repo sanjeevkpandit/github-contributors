@@ -1,6 +1,15 @@
 {
-  "main.css": "static/css/main.f38d37ee.css",
-  "main.css.map": "static/css/main.f38d37ee.css.map",
-  "main.js": "static/js/main.91e113a9.js",
-  "main.js.map": "static/js/main.91e113a9.js.map"
+  "main.css": "/github-contributors/static/css/main.d1669101.chunk.css",
+  "main.js": "/github-contributors/static/js/main.90a40cf2.chunk.js",
+  "main.js.map": "/github-contributors/static/js/main.90a40cf2.chunk.js.map",
+  "static/css/1.5b412d4c.chunk.css": "/github-contributors/static/css/1.5b412d4c.chunk.css",
+  "static/js/1.ff4888f4.chunk.js": "/github-contributors/static/js/1.ff4888f4.chunk.js",
+  "static/js/1.ff4888f4.chunk.js.map": "/github-contributors/static/js/1.ff4888f4.chunk.js.map",
+  "runtime~main.js": "/github-contributors/static/js/runtime~main.10c4007f.js",
+  "runtime~main.js.map": "/github-contributors/static/js/runtime~main.10c4007f.js.map",
+  "static/css/1.5b412d4c.chunk.css.map": "/github-contributors/static/css/1.5b412d4c.chunk.css.map",
+  "static/css/main.d1669101.chunk.css.map": "/github-contributors/static/css/main.d1669101.chunk.css.map",
+  "index.html": "/github-contributors/index.html",
+  "precache-manifest.bd4fa5954dd959f7f1817ebae6f4b930.js": "/github-contributors/precache-manifest.bd4fa5954dd959f7f1817ebae6f4b930.js",
+  "service-worker.js": "/github-contributors/service-worker.js"
 }
