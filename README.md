@@ -1,33 +1,29 @@
-# View the list of contributors of a github project
+# github-contributors
 
-## Setup instructions
+## Project setup
+```
+yarn install
+```
 
-- Clone repo
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
 
-  ```bash
-  git clone git@github.com:sanjeevkpandit/github-contributors.git
-  ```
+### Compiles and minifies for production
+```
+yarn run build
+```
 
-- For development
+### Run your tests
+```
+yarn run test
+```
 
-  ```bash
-  yarn start
-  # or
-  npm start
-  ```
+### Lints and fixes files
+```
+yarn run lint
+```
 
-- To prepare a build
-
-  ```bash
-  yarn build
-  # or
-  npm run build
-  ```
-
-- To deploy under github-io as gh-pages branch
-
-  ```bash
-  yarn deploy
-  # or
-  npm run deploy
-  ```
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
