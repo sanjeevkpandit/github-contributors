@@ -1,15 +1,24 @@
 {
-  "main.css": "/github-contributors/static/css/main.366f9b16.chunk.css",
-  "main.js": "/github-contributors/static/js/main.e36ec798.chunk.js",
-  "main.js.map": "/github-contributors/static/js/main.e36ec798.chunk.js.map",
-  "static/css/1.b7ac90af.chunk.css": "/github-contributors/static/css/1.b7ac90af.chunk.css",
-  "static/js/1.5ae48296.chunk.js": "/github-contributors/static/js/1.5ae48296.chunk.js",
-  "static/js/1.5ae48296.chunk.js.map": "/github-contributors/static/js/1.5ae48296.chunk.js.map",
-  "runtime~main.js": "/github-contributors/static/js/runtime~main.10c4007f.js",
-  "runtime~main.js.map": "/github-contributors/static/js/runtime~main.10c4007f.js.map",
-  "static/css/main.366f9b16.chunk.css.map": "/github-contributors/static/css/main.366f9b16.chunk.css.map",
-  "static/css/1.b7ac90af.chunk.css.map": "/github-contributors/static/css/1.b7ac90af.chunk.css.map",
-  "index.html": "/github-contributors/index.html",
-  "precache-manifest.11d4cb698398fab5683ffcc78ce24717.js": "/github-contributors/precache-manifest.11d4cb698398fab5683ffcc78ce24717.js",
-  "service-worker.js": "/github-contributors/service-worker.js"
+  "files": {
+    "main.css": "/github-contributors/static/css/main.939adc35.chunk.css",
+    "main.js": "/github-contributors/static/js/main.32c1dbe9.chunk.js",
+    "main.js.map": "/github-contributors/static/js/main.32c1dbe9.chunk.js.map",
+    "runtime-main.js": "/github-contributors/static/js/runtime-main.6176c826.js",
+    "runtime-main.js.map": "/github-contributors/static/js/runtime-main.6176c826.js.map",
+    "static/css/2.545c6387.chunk.css": "/github-contributors/static/css/2.545c6387.chunk.css",
+    "static/js/2.20656893.chunk.js": "/github-contributors/static/js/2.20656893.chunk.js",
+    "static/js/2.20656893.chunk.js.map": "/github-contributors/static/js/2.20656893.chunk.js.map",
+    "index.html": "/github-contributors/index.html",
+    "precache-manifest.4031047007ca84dbecdef7a008bc7d71.js": "/github-contributors/precache-manifest.4031047007ca84dbecdef7a008bc7d71.js",
+    "service-worker.js": "/github-contributors/service-worker.js",
+    "static/css/2.545c6387.chunk.css.map": "/github-contributors/static/css/2.545c6387.chunk.css.map",
+    "static/css/main.939adc35.chunk.css.map": "/github-contributors/static/css/main.939adc35.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6176c826.js",
+    "static/css/2.545c6387.chunk.css",
+    "static/js/2.20656893.chunk.js",
+    "static/css/main.939adc35.chunk.css",
+    "static/js/main.32c1dbe9.chunk.js"
+  ]
 }
