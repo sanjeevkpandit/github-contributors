@@ -13,27 +13,29 @@ class App extends Component {
     showSearchResults: false
   };
 
-  handleToggleSearchResults = (showSearchResults) => {
+  handleToggleSearchResults = showSearchResults => {
     this.setState({ showSearchResults });
-  }
+  };
 
   render() {
-    let mainEl = <ContributorsList userRepo={ Utils.getRepoUrl() } />;
+    let mainEl = <ContributorsList userRepo={Utils.getRepoUrl()} />;
 
     if (this.state.showSearchResults || Utils.getParameterByName('search')) {
-      mainEl = <SearchResults searchKey={Utils.getParameterByName('search')} />
+      mainEl = <SearchResults searchKey={Utils.getParameterByName('search')} />;
     }
 
     return (
       <div>
         <NavBar />
-        <div className="container">
-          <SearchBar handleToggleSearchResults={this.handleToggleSearchResults}
-            searchKey={Utils.getParameterByName('search')} />
+        <div className='container'>
+          <SearchBar
+            handleToggleSearchResults={this.handleToggleSearchResults}
+            searchKey={Utils.getParameterByName('search')}
+          />
 
-          <hr/>
+          <hr />
 
-          { mainEl }
+          {mainEl}
         </div>
         <Footer />
       </div>

@@ -3,9 +3,9 @@ const getParameterByName = (name, url) => {
     url = window.location.href;
   }
 
-  name = name.replace(/[[\]]/g, "\\$&");
+  name = name.replace(/[[\]]/g, '\\$&');
 
-  let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+  let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
     results = regex.exec(url);
 
   if (!results) {
@@ -16,7 +16,7 @@ const getParameterByName = (name, url) => {
     return '';
   }
 
-  return decodeURIComponent(results[2].replace(/\+/g, " "));
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
 };
 
 const getRepoUrl = () => {
@@ -28,17 +28,22 @@ const getRepoUrl = () => {
     repo = 'github-contributors';
   }
 
-  return {user, repo};
+  return { user, repo };
 };
 
 const setLocationParam = (key, value) => {
   if (window.history.pushState) {
-    let newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + key + '=' + value;
+    let newurl =
+      window.location.protocol + '//' + window.location.host + window.location.pathname + '?' + key + '=' + value;
 
-    window.history.pushState({
-      path: newurl
-    }, '', newurl);
+    window.history.pushState(
+      {
+        path: newurl
+      },
+      '',
+      newurl
+    );
   }
 };
 
-export {getRepoUrl, setLocationParam, getParameterByName};
+export { getRepoUrl, setLocationParam, getParameterByName };

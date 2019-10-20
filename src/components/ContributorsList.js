@@ -34,24 +34,20 @@ class ContributorsList extends Component {
   }
 
   handleChangeListingView = view => {
-    this.setState({view});
-  }
+    this.setState({ view });
+  };
 
   render() {
     const { error, loading, contributors } = this.state;
 
     if (loading) {
-      return (
-        <div className="container text-center loading-container">
-          Loading...
-        </div>
-      );
+      return <div className='container text-center loading-container'>Loading...</div>;
     }
 
     if (error) {
       return (
-        <div className="container">
-          <div className="alert alert-danger" role="alert">
+        <div className='container'>
+          <div className='alert alert-danger' role='alert'>
             Unable to fetch repository information. Please check the username and repository and try again.
           </div>
         </div>
@@ -61,26 +57,31 @@ class ContributorsList extends Component {
     return (
       <div>
         <h5>
-          <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank" rel="noopener noreferrer">
+          <a href={`https://github.com/${this.props.userRepo.user}`} target='_blank' rel='noopener noreferrer'>
             {this.props.userRepo.user}
           </a>
-          <small className="text-muted"> / </small>
-          <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank" rel="noopener noreferrer">
+          <small className='text-muted'> / </small>
+          <a
+            href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             {this.props.userRepo.repo}
           </a>
-          <small className="text-muted">
+          <small className='text-muted'>
             {` ${contributors.length} ${contributors.length === 1 ? 'contributor' : 'contributors'}`}
           </small>
         </h5>
-        <hr/>
-        <div className="row text-center">
-          {contributors && contributors.map(contributor =>
-            <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
-          )}
+        <hr />
+        <div className='row text-center'>
+          {contributors &&
+            contributors.map(contributor => (
+              <Contributor key={`contributor-${contributor.id}`} contributor={contributor} />
+            ))}
         </div>
       </div>
     );
   }
-};
+}
 
 export default ContributorsList;
