@@ -1,6 +1,5 @@
 import axios from 'axios';
 import React, { Component } from 'react';
-import Loader from 'halogen/BounceLoader';
 
 import Contributor from './Contributor';
 
@@ -44,7 +43,7 @@ class ContributorsList extends Component {
     if (loading) {
       return (
         <div className="container text-center loading-container">
-          <Loader color="#26A65B" size="48px" margin="4px" />
+          Loading...
         </div>
       );
     }
