@@ -61,11 +61,11 @@ class ContributorsList extends Component {
     return (
       <div>
         <h5>
-          <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank">
+          <a href={`https://github.com/${this.props.userRepo.user}`} target="_blank" rel="noopener noreferrer">
             {this.props.userRepo.user}
           </a>
           <small className="text-muted"> / </small>
-          <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank">
+          <a href={`https://github.com/${this.props.userRepo.user}/${this.props.userRepo.repo}`} target="_blank" rel="noopener noreferrer">
             {this.props.userRepo.repo}
           </a>
           <small className="text-muted">
